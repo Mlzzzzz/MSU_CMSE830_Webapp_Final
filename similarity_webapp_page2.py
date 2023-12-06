@@ -7,7 +7,7 @@ from similarity_webapp_viewer_helper import show_annotation
 
 def page2():
     st.markdown("<h1 style='text-align: center; color: black; font-size: 24px;'>Distribution of Attributes</h1>", unsafe_allow_html=True)
-    df = pd.read_csv(r"https://raw.githubusercontent.com/Mlzzzzz/MSU_CMSE830_Webapp/main/Datasets/preprocessed_dataset.csv")
+    df = pd.read_csv(r"https://raw.githubusercontent.com/Mlzzzzz/MSU_CMSE830_Webapp_Final/main/preprocessing/preprocessed_dataset.csv")
 
     df['similar'] = df['similar'].astype(str)
     attributes_to_select = ['Introduction', 'tanimoto_cdk_Extended', 'TanimotoCombo', 'pchembl_distance', 'frac_similar']

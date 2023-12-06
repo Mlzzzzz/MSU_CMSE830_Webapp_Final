@@ -12,19 +12,19 @@ def start_page():
     col1, col2, col3 = st.columns(3)
     col1.markdown("""
         <p style='text-align: center; font-size: 14px;'>Statins</p>
-        <img src='https://raw.githubusercontent.com/Mlzzzzz/MSU_CMSE830_Webapp/main/Picture/Lovastatin.svg' width='200' height='100' alt='Statins' style='display: block; margin-left: auto; margin-right: auto;'>
+        <img src='https://raw.githubusercontent.com/Mlzzzzz/MSU_CMSE830_Webapp_Final/main/pictures/Lovastatin.svg' width='200' height='100' alt='Statins' style='display: block; margin-left: auto; margin-right: auto;'>
         <p style='text-align: center; font-size: 16px;'>Familial hypercholesterolemia</p>
     """, unsafe_allow_html=True)
 
     col2.markdown("""
         <p style='text-align: center; font-size: 14px;'>Cuprimine</p>
-        <img src='https://raw.githubusercontent.com/Mlzzzzz/MSU_CMSE830_Webapp/main/Picture/Penicillamine_structure.svg' width='120' height='100' alt='Cuprimine' style='display: block; margin-left: auto; margin-right: auto;'>
+        <img src='https://raw.githubusercontent.com/Mlzzzzz/MSU_CMSE830_Webapp_Final/main/pictures/Penicillamine_structure.svg' width='120' height='100' alt='Cuprimine' style='display: block; margin-left: auto; margin-right: auto;'>
         <p style='text-align: center; font-size: 16px;'>Wilson's disease</p>
     """, unsafe_allow_html=True)
 
     col3.markdown("""
         <p style='text-align: center; font-size: 14px;'>Nebcin</p>
-        <img src='https://raw.githubusercontent.com/Mlzzzzz/MSU_CMSE830_Webapp/main/Picture/Tobramycin.svg' width='200' height='100' alt='Nebcin' style='display: block; margin-left: auto; margin-right: auto;'>
+        <img src='https://raw.githubusercontent.com/Mlzzzzz/MSU_CMSE830_Webapp_Final/main/pictures/Tobramycin.svg' width='200' height='100' alt='Nebcin' style='display: block; margin-left: auto; margin-right: auto;'>
         <p style='text-align: center; font-size: 16px;'>Cystic fibrosis</p>
     """, unsafe_allow_html=True)
 
@@ -34,13 +34,13 @@ def start_page():
     st.markdown("<p style='font-size: 18px;'>When developing a new orphan drug, the first thing to do is to compare it's similarity with other orphan drugs in the Exclusivity period.</p>", unsafe_allow_html=True)
 
     col1, col2 = st.columns(2)
-    col1.markdown("<img src='https://raw.githubusercontent.com/Mlzzzzz/MSU_CMSE830_Webapp/main/Picture/image_molecule_003a.svg' width='300' height='150' alt='Statins' style='display: block; margin-left: auto; margin-right: auto;'>", unsafe_allow_html=True)
-    col2.markdown("<img src='https://raw.githubusercontent.com/Mlzzzzz/MSU_CMSE830_Webapp/main/Picture/image_molecule_003b.svg' width='300' height='150' alt='Statins' style='display: block; margin-left: auto; margin-right: auto;'>", unsafe_allow_html=True)
+    col1.markdown("<img src='https://raw.githubusercontent.com/Mlzzzzz/MSU_CMSE830_Webapp_Final/main/pictures/2d_structures/image_molecule_003a.svg' width='300' height='150' alt='Statins' style='display: block; margin-left: auto; margin-right: auto;'>", unsafe_allow_html=True)
+    col2.markdown("<img src='https://raw.githubusercontent.com/Mlzzzzz/MSU_CMSE830_Webapp_Final/main/pictures/2d_structures/image_molecule_003b.svg' width='300' height='150' alt='Statins' style='display: block; margin-left: auto; margin-right: auto;'>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center; font-size: 18px;'>Are they similar?</p>", unsafe_allow_html=True)
 
     col1, col2 = st.columns(2)
-    col1.markdown("<img src='https://raw.githubusercontent.com/Mlzzzzz/MSU_CMSE830_Webapp/main/Picture/image_molecule_005a.svg' width='300' height='150' alt='Statins' style='display: block; margin-left: auto; margin-right: auto;'>", unsafe_allow_html=True)
-    col2.markdown("<img src='https://raw.githubusercontent.com/Mlzzzzz/MSU_CMSE830_Webapp/main/Picture/image_molecule_005b.svg' width='300' height='150' alt='Statins' style='display: block; margin-left: auto; margin-right: auto;'>", unsafe_allow_html=True)
+    col1.markdown("<img src='https://raw.githubusercontent.com/Mlzzzzz/MSU_CMSE830_Webapp_Final/main/pictures/2d_structures/image_molecule_005a.svg' width='300' height='150' alt='Statins' style='display: block; margin-left: auto; margin-right: auto;'>", unsafe_allow_html=True)
+    col2.markdown("<img src='https://raw.githubusercontent.com/Mlzzzzz/MSU_CMSE830_Webapp_Final/main/pictures/2d_structures/image_molecule_005b.svg' width='300' height='150' alt='Statins' style='display: block; margin-left: auto; margin-right: auto;'>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center; font-size: 18px;'>Or, are they similar?</p>", unsafe_allow_html=True)
 
     st.markdown("<p style='font-size: 18px;'>Even experienced chemists often make mistakes!</p>", unsafe_allow_html=True)

@@ -6,7 +6,7 @@ from similarity_webapp_viewer_helper import show_annotation
 
 def page3():
     st.markdown("<h1 style='text-align: center; color: black; font-size: 24px;'>Relationship of Attributes</h1>", unsafe_allow_html=True)
-    df = pd.read_csv(r"https://raw.githubusercontent.com/Mlzzzzz/MSU_CMSE830_Webapp/main/Datasets/preprocessed_dataset.csv")
+    df = pd.read_csv(r"https://raw.githubusercontent.com/Mlzzzzz/MSU_CMSE830_Webapp_Final/main/preprocessing/preprocessed_dataset.csv")
     df['similar'] = df['similar'].astype(str)
     hues_to_select = ['pair_type', 'similar']
     relationships = ["Introduction", "Relationship between tanimoto_cdk_Extended and TanimotoCombo", "Relationship between tanimoto_cdk_Extended and pchembl_distance", "Relationship between tanimoto_cdk_Extended and frac_similar", 

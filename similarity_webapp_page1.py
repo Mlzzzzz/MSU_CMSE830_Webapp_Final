@@ -17,7 +17,7 @@ def input_id():
 
 def page1():
     st.markdown("<h1 style='text-align: center; color: black; font-size: 24px;'>Introduction of the Dataset</h1>", unsafe_allow_html=True)
-    df = pd.read_csv(r"https://raw.githubusercontent.com/Mlzzzzz/MSU_CMSE830_Webapp/main/Datasets/preprocessed_dataset.csv")
+    df = pd.read_csv(r"https://raw.githubusercontent.com/Mlzzzzz/MSU_CMSE830_Webapp_Final/main/preprocessing/preprocessed_dataset.csv")
     df['similar'] = df['similar'].astype(str)
     columns_to_select = [col for col in df.columns if col != 'id_pair']
     columns_to_select.insert(0, 'Dataset Preview')

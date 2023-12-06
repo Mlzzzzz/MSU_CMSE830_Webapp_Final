@@ -1,17 +1,19 @@
 import streamlit as st
 import base64
+import requests
 
 def page6():
 
-    def get_base64_of_image(file_path):
-        with open(file_path, "rb") as img_file:
-            return base64.b64encode(img_file.read()).decode()
+    def get_base64_of_image(url):
+        response = requests.get(url)
+        return base64.b64encode(response.content).decode()
 
-    data_chemist_path = "C:\\Users\\User\\OneDrive - Michigan State University\\Data Science\\cmse830\\Final Project\\Webapp\\pictures\\data-chem.png"
-    mo_pic_path = "C:\\Users\\User\\OneDrive - Michigan State University\\Data Science\\cmse830\\Final Project\\Webapp\\pictures\\Mo_Pic.png"
-    data_knowledge_path = "C:\\Users\\User\\OneDrive - Michigan State University\\Data Science\\cmse830\\Final Project\\Webapp\\pictures\\data-knowledge.jpg"
-    chem_joke_path = "C:\\Users\\User\\OneDrive - Michigan State University\\Data Science\\cmse830\\Final Project\\Webapp\\pictures\\chemistry-joke.jpg"
-    foods_path = "C:\\Users\\User\\OneDrive - Michigan State University\\Data Science\\cmse830\\Final Project\\Webapp\\pictures\\foods.jpg"
+
+    data_chemist_path = "https://raw.githubusercontent.com/Mlzzzzz/MSU_CMSE830_Webapp_Final/main/pictures/data-chem.png"
+    mo_pic_path = "https://raw.githubusercontent.com/Mlzzzzz/MSU_CMSE830_Webapp_Final/main/pictures/Mo_Pic.png"
+    data_knowledge_path = "https://raw.githubusercontent.com/Mlzzzzz/MSU_CMSE830_Webapp_Final/main/pictures/data-knowledge.jpg"
+    chem_joke_path = "https://raw.githubusercontent.com/Mlzzzzz/MSU_CMSE830_Webapp_Final/main/pictures/chemistry-joke.jpg"
+    foods_path = "https://raw.githubusercontent.com/Mlzzzzz/MSU_CMSE830_Webapp_Final/main/pictures/foods.jpg"
 
     combined_html = f"""
     <head>
@@ -42,7 +44,7 @@ def page6():
                 <div class="skill-row">
                     <img class="chem-joke" src="data:image/png;base64,{get_base64_of_image(chem_joke_path)}" alt="chem-joke-img">
                     <h3>Chemistry</h3>
-                    <h4>With four years of reseach experience in chemistry, I'm the expert of organometallics and organic synthesis, with sound experience in characterization techniques like X-ray crystallography and chromatography.</h4>
+                    <h4>With four years of reseach experience in chemistry, I'm the expert of organometallics and organic synthesis, with sound experience in Air-free technique and characterization techniques like X-ray crystallography and chromatography.</h4>
                 </div>
                 <div class="skill-row">
                     <img class="foods" src="data:image/png;base64,{get_base64_of_image(foods_path)}" alt="foods-img">
@@ -80,7 +82,7 @@ def page6():
             text-align: center;
         }}
         .data-chem {{
-            width: 30%;
+            width: 40%;
             height: auto;
             margin-top: 40px;
         }}
