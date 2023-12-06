@@ -6,5 +6,4 @@ pandas
 altair
 numpy
 scikit-learn
-base64
 requests
