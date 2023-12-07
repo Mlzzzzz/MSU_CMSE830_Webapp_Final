@@ -8,6 +8,8 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVR
 from sklearn.neighbors import KNeighborsRegressor
 import plotly.graph_objects as go
+import matplotlib.pyplot as plt
+from sklearn.metrics import ConfusionMatrixDisplay
 
 def page5():
     st.markdown("<h1 style='text-align: center; color: black; font-size: 24px;'>Model Analysis</h1>", unsafe_allow_html=True)
@@ -46,6 +48,11 @@ def page5():
                     "These instances are highlighted in the table below:</p>", unsafe_allow_html=True)
         st.write(df_linear)
         st.markdown("<p style='font-size: 18px;'>Conclusively, the linear regression model achieved a prediction accuracy of <span style='color: blue; font-weight: bold;'>81%</span>.</p>", unsafe_allow_html=True)
+        cm = np.array([[38, 10], [9, 43]])
+        disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=["Not Similar", "Similar"])
+        disp.plot(cmap='viridis', values_format='d')
+        plt.title('Confusion Matrix of Linear Regression', fontsize=10)
+        st.pyplot(plt)
         model_toplot = LinearRegression()
         features = ["tanimoto_cdk_Extended", "TanimotoCombo"]
         target = "frac_similar"
@@ -67,6 +74,11 @@ def page5():
                     "These instances are highlighted in the table below:</p>", unsafe_allow_html=True)
         st.write(df_log)
         st.markdown("<p style='font-size: 18px;'>Conclusively, the linear regression model achieved a prediction accuracy of <span style='color: blue; font-weight: bold;'>85%</span>.</p>", unsafe_allow_html=True)
+        cm = np.array([[35, 13], [2, 50]])
+        disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=["Not Similar", "Similar"])
+        disp.plot(cmap='viridis', values_format='d')
+        plt.title('Confusion Matrix of Logistic Regression')
+        st.pyplot(plt)
         model_toplot = LogisticRegression(C=0.01, penalty='l2', solver='saga')
         features = ["tanimoto_cdk_Extended", "TanimotoCombo"]
         target = "similar"
@@ -85,10 +97,15 @@ def page5():
         st.markdown("<p style='font-size: 18px;'>An essential part of our analysis was identifying pairs where predicted similarity diverged from actual similarity. "
                     "These instances are highlighted in the table below:</p>", unsafe_allow_html=True)
         st.write(df_tree)
-        st.markdown("<p style='font-size: 18px;'>Conclusively, the linear regression model achieved a prediction accuracy of <span style='color: blue; font-weight: bold;'>78%</span>.</p>", unsafe_allow_html=True)
+        st.markdown("<p style='font-size: 18px;'>Conclusively, the linear regression model achieved a prediction accuracy of <span style='color: blue; font-weight: bold;'>79%</span>.</p>", unsafe_allow_html=True)
         st.markdown("<p style='font-size: 18px;'>It is important to note that during grid search, the best hyperparameter results display considerable sensitivity to various splits of the dataset. "
                     "This observation indicates that the model may struggle to generalize across different subsets of data. "
                     "the decision tree model may not be a suitable choice for this particular problem.</p>", unsafe_allow_html=True)
+        cm = np.array([[35, 13], [8, 44]])
+        disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=["Not Similar", "Similar"])
+        disp.plot(cmap='viridis', values_format='d')
+        plt.title('Confusion Matrix of Decision Tree Classifier')
+        st.pyplot(plt)
         model_toplot = DecisionTreeClassifier(max_depth=4, min_samples_leaf=3, min_samples_split=2)
         features = ["tanimoto_cdk_Extended", "TanimotoCombo"]
         target = "similar"
@@ -109,6 +126,11 @@ def page5():
                     "These instances are highlighted in the table below:</p>", unsafe_allow_html=True)
         st.write(df_svr)
         st.markdown("<p style='font-size: 18px;'>Conclusively, the epsilon-support vector regression model achieved a prediction accuracy of <span style='color: blue; font-weight: bold;'>84%</span>.</p>", unsafe_allow_html=True)
+        cm = np.array([[33, 15], [1, 51]])
+        disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=["Not Similar", "Similar"])
+        disp.plot(cmap='viridis', values_format='d')
+        plt.title('Confusion Matrix of Support Vector Regression')
+        st.pyplot(plt)
         model_toplot = SVR(C=1, epsilon=0.005, kernel='rbf')
         features = ["tanimoto_cdk_Extended", "TanimotoCombo"]
         target = "frac_similar"
@@ -130,6 +152,11 @@ def page5():
         st.write(df_knn)
         st.markdown("<p style='font-size: 18px;'>Conclusively, the k-nearest neighbors regression model achieved a prediction accuracy of <span style='color: blue; font-weight: bold;'>87%</span>.</p>", unsafe_allow_html=True)
         st.markdown("<p style='font-size: 18px;'>As of now, this model stands out as the most effective one that have been evaluated.</p>", unsafe_allow_html=True)
+        cm = np.array([[37, 11], [2, 50]])
+        disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=["Not Similar", "Similar"])
+        disp.plot(cmap='viridis', values_format='d')
+        plt.title('Confusion Matrix of KNN Regression')
+        st.pyplot(plt)
         model_toplot = KNeighborsRegressor(metric='manhattan', n_neighbors=4)
         features = ["tanimoto_cdk_Extended", "TanimotoCombo"]
         target = "frac_similar"
